@@ -1215,7 +1215,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 799 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 1105.56 } //Voron M4 estep. Titan e-step is 799
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1224,9 +1224,9 @@
  */
 #define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
 
-//#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
+#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 100 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1709,7 +1709,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false //Voron M4 DIY Mount. true for default titan extruder
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
